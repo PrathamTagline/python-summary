@@ -1,8 +1,10 @@
 string = "hello my name is pratham, i am a student of btech.my hobby is to read books and play genshin impact , hahahahahaha"
-vowel_dicttionary = {}
 
-string.replace(" ", "")
+vowel_dicttionary = {}
+===
 new_string = string.lower()
+new_string = new_string.replace(" ", "") 
+
 count_a = new_string.count("a")
 count_e = new_string.count("e")
 count_i = new_string.count("i")
