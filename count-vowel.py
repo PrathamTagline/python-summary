@@ -1,7 +1,7 @@
 string = "hello my name is pratham, i am a student of btech.my hobby is to read books and play genshin impact , hahahahahaha"
 
 vowel_dicttionary = {}
-===
+
 new_string = string.lower()
 new_string = new_string.replace(" ", "") 
 
