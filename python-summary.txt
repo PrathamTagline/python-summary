@@ -1,0 +1,590 @@
+basic commands
+
+    python3 -- version => check python version
+    pip3 --version => check pip version
+    pip3 install <package_name> => install package
+    pip3 install <package_name> --upgrade => upgrade package
+    pip3 uninstall <package_name> => uninstall package
+    pip3 list => list all packages
+    pip3 show <package_name> => show package details
+    pip3 search <package_name> => search package
+
+
+run python file
+
+    python3 <file_name>.py => run python file
+
+
+basic python 
+
+    print statement
+
+        print("Hello World") => print statement automatically adds a new line at the end
+        print("Hello World", end="") => print statement without adding a new line at the end
+        print("Hello World", end="\t") => print statement with a tab at the end
+        print("Hello World", end="\n") => print statement with a new line at the end
+        print("Hello World", end="\r") => print statement with a carriage return at the end
+        print("Hello World", end="\b") => print statement with a backspace at the end
+        print("Hello World", end="\f") => print statement with a form feed at the end
+        print("Hello World", end="\v") => print statement with a vertical tab at the end
+        print("Hello World", end="\a") => print statement with a bell at the end
+        print("Hello World", end="\0") => print statement with a null character at the end
+
+        print with variable
+
+            print(f"Hello {name}") => print statement with a variable
+            f => format the string
+
+        print with multiple values
+
+            print(1, 2, 3, 4, 5) => print statement with multiple values
+            print(1, 2, 3, 4, 5, sep=",") => print statement with multiple values with a separator
+
+        print(object= separator= end= file= flush=)
+
+            print(1, 2, 3, 4, 5, sep=",", end="\n", file=sys.stdout, flush=False)
+            sep => separator (default is space)
+            end => end of the line (default is new line)    
+            file => file to write to (default is sys.stdout) not print to the console
+            flush => flush the output buffer (default is False) 
+
+    all variables
+
+        a = 10 => integer variable
+        b = 10.5 => float variable
+        c = "Hello World" => string variable
+        d = True => boolean variable
+        e = None => null variable
+       [1, 2, 3, 4, 5] => list variable
+        g =  f = (1, 2, 3, 4, 5) => tuple variable
+        h = {1, 2, 3, 4, 5} => set variable
+        i = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"} => dictionary variable
+        j = 1+2j => complex variable
+        
+        
+        int :- simple integer,hexadecimal,binary,octal
+            a = 10 => simple integer
+            b = 0x10 => hexadecimal
+            c = 0b10 => binary
+            d = 0o10 => octal
+
+        float :- simple float,scientific notation
+            a = 10.5 => simple float
+            b = 1.23e-4 => scientific notation
+
+        string :- simple string,multi line string,raw string
+            a = "Hello World" => simple string
+            b = """Hello World""" => multi line string
+            c = r"Hello World" => raw string
+
+        list :- simple list,nested list
+            a = [1, 2, 3, 4, 5] => simple list
+            b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] => nested list
+
+        tuple :- simple tuple,nested tuple
+            a = (1, 2, 3, 4, 5) => simple tuple
+            b = ((1, 2, 3), (4, 5, 6), (7, 8, 9)) => nested tuple
+
+        set :- simple set,nested set
+            a = {1, 2, 3, 4, 5} => simple set
+            b = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}} => nested set 
+
+        dictionary :- simple dictionary,nested dictionary
+            a = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"} => simple dictionary
+            b = {{1: "one", 2: "two", 3: "three"}, {4: "four", 5: "five", 6: "six"}, {7: "seven", 8: "eight", 9: "nine"}} => nested dictionary
+
+        complex :- simple complex,nested complex
+            a = 1+2j => simple complex
+            b = (1+2j, 3+4j, 5+6j) => nested complex    
+
+    
+    Python Type Conversion
+
+        Implicit Conversion - automatic type conversion
+        Explicit Conversion - manual type conversion
+
+        Implicit Conversion
+
+            a = 10
+            b = 10.5
+            c = a + b
+            print(c) => 20.5
+
+        Explicit Conversion
+
+            a = 10
+            b = 10.5
+            c = int(a) + int(b)
+            print(c) => 20
+
+
+    Types of Python Operators
+
+        Arithmetic Operators
+        Assignment Operators
+        Comparison Operators
+        Logical Operators
+        Identity Operators
+        Membership Operators
+        Bitwise Operators
+
+        Arithmetic Operators
+
+            + => addition
+            - => subtraction
+            * => multiplication
+            / => division
+            % => modulus
+            ** => exponentiation
+            // => floor division
+
+        Assignment Operators
+
+            = => assignment
+            += => addition assignment
+            -= => subtraction assignment
+            *= => multiplication assignment
+            /= => division assignment
+            %= => modulus assignment
+            **= => exponentiation assignment
+            //= => floor division assignment
+
+        Comparison Operators
+
+            == => equal
+            != => not equal
+            > => greater than
+            < => less than
+            >= => greater than or equal to
+            <= => less than or equal to
+
+        Logical Operators
+
+            and => logical and
+            or => logical or
+            not => logical not
+
+        Identity Operators
+
+            is => identity
+            is not => not identity
+
+        Membership Operators
+
+            in => in
+            not in => not in
+
+        Bitwise Operators
+
+            & => bitwise and
+            | => bitwise or
+            ^ => bitwise xor
+            ~ => bitwise not
+            << => bitwise left shift
+            >> => bitwise right shift
+
+    
+
+
+python list data structure
+
+    definition :- list is a collection of items in a sequence
+    syntax :- list = [item1, item2, item3, ...]
+
+    List Characteristics
+
+        list is ordered
+        list is mutable
+        list is indexed
+        list is dynamic
+        list allows duplicate values   
+
+    List Items of Different Types   
+
+        list = [1, "Hello", 3.14, True, [1, 2, 3]]
+
+    List Indexing
+
+        positive indexing
+
+            list[index] => access element at index
+            list[start:end] => access elements from start to end
+            list[start:end:step] => access elements from start to end with step
+            
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[0]) => 1
+                print(list[1:3]) => ["Hello", 3.14]
+                print(list[1:3:2]) => ["Hello"]
+
+        negative indexing
+
+            list[-index] => access element at index from the end
+            list[-start:end] => access elements from start to end from the end
+            list[-start:end:step] => access elements from start to end with step from the end
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[-1]) => [1, 2, 3]
+                print(list[-1:3]) => [1, 2, 3]
+                print(list[-1:3:2]) => [1, 2, 3]
+    
+    slicing
+
+        Basic Slicing with :
+
+            list[start:end] => access elements from start to end
+            list[start:end:step] => access elements from start to end with step
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[1:3]) => ["Hello", 3.14]
+                print(list[1:3:2]) => ["Hello"]
+
+        Omitting start and end
+
+            list[:end] => access elements from start to end
+            list[start:] => access elements from start to end
+            list[:] => access all elements
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[:3]) => [1, "Hello", 3.14]
+                print(list[1:]) => ["Hello", 3.14, True, [1, 2, 3]]
+                print(list[:]) => [1, "Hello", 3.14, True, [1, 2, 3]]
+
+        Extended Slicing
+
+            list[start:end:step] => access elements from start to end with step
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[1:3:2]) => ["Hello"]
+
+        Negative step for Reversing
+
+            list[::-1] => reverse the list
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[::-1]) => [[1, 2, 3], True, 3.14, "Hello", 1]
+
+        Combining start, end, and step
+
+            list[start:end:step] => access elements from start to end with step
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[1:3:2]) => ["Hello"] 
+
+        example :-
+
+            
+
+            list = [1, "Hello", 3.14, True, [1, 2, 3]]
+            print(list[1:3]) => ["Hello", 3.14]
+            print(list[1:3:2]) => ["Hello"]
+            print(list[::-1]) => [[1, 2, 3], True, 3.14, "Hello", 1] => reverse the list
+            
+    Spread Operator in Python (for Unpacking)
+        
+        use * to unpack the list 
+
+        example :-
+
+            list = [1, 2, 3, 4, 5]
+            list2 = [*list, 6, 7, 8, 9, 10]
+            print(list2) => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    List Methods
+
+        list.append(element) => add element to the end of the list
+        list.insert(index, element) => insert element at index
+        list.remove(element) => remove element from the list
+        list.pop(index) => remove element at index
+        list.clear() => clear the list
+        list.sort() => sort the list
+        list.sort(reverse=True) => sort the list in reverse order
+        list.reverse() => reverse the list
+        list.copy() => copy the list
+        list.count(element) => count the number of times element appears in the list
+        list.index(element) => return the index of the first occurrence of element
+        list.extend(list2) => add elements of list2 to the end of the list
+        list.sort(key=lambda x: x[1]) => sort the list by the second element of each sublist
+        list.sort(key=lambda x: x[1], reverse=True) => sort the list by the second element of each sublist in reverse order
+
+
+tuple data structure
+
+    definition :- tuple is a collection of items in a sequence
+    syntax :- tuple = (item1, item2, item3, ...)
+
+    Tuple Characteristics
+
+        tuple is ordered
+        tuple is immutable
+        tuple is indexed
+        tuple is dynamic
+        tuple allows duplicate values   
+
+    Tuple Items of Different Types   
+
+        tuple = (1, "Hello", 3.14, True, [1, 2, 3])
+
+    Tuple Indexing
+
+        positive indexing
+
+            tuple[index] => access element at index
+            tuple[start:end] => access elements from start to end
+            tuple[start:end:step] => access elements from start to end with step
+
+        negative indexing
+
+            tuple[-index] => access element at index from the end
+            tuple[-start:end] => access elements from start to end from the end
+            tuple[-start:end:step] => access elements from start to end with step from the end
+
+    tuple slicing
+
+        tuple[start:end] => access elements from start to end
+        tuple[start:end:step] => access elements from start to end with step
+
+    tuple methods
+
+        tuple.count(element) => count the number of times element appears in the tuple
+        tuple.index(element) => return the index of the first occurrence of element
+        tuple.len() => return the length of the tuple
+        tuple.max() => return the maximum element in the tuple
+        tuple.min() => return the minimum element in the tuple
+        tuple.sum() => return the sum of the elements in the tuple
+        tuple.sorted() => return the sorted list of the tuple
+        tuple.sorted(reverse=True) => return the sorted list of the tuple in reverse order
+        tuple.reverse() => return the reversed list of the tuple
+        tuple.copy() => return the copy of the tuple
+
+    tuple unpacking
+
+        tuple = (1, 2, 3, 4, 5)
+        a, b, c, d, e = tuple
+        print(a, b, c, d, e) => 1 2 3 4 5
+
+    tuple packing
+
+        tuple = (1, 2, 3, 4, 5)
+        a = 1
+        b = 2
+        c = 3
+        d = 4
+        e = 5
+        tuple = (a, b, c, d, e)
+        print(tuple) => (1, 2, 3, 4, 5)
+
+    Spread Operator in Python (for Unpacking)
+
+        tuple = (1, 2, 3, 4, 5)
+        list = [*tuple, 6, 7, 8, 9, 10]
+        print(list) => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+
+
+string data structure
+
+    definition :- string is a sequence of characters
+    syntax :- string = "Hello World"    
+
+    string characteristics
+
+        string is ordered
+        string is immutable
+        string is indexed
+        string is dynamic
+        string allows duplicate values   
+
+    Python Multiline String
+
+        string = """Hello World
+        Hello World
+        Hello World"""
+
+    string methods
+
+        string.capitalize() => return the capitalized string
+        string.casefold() => return the casefolded string
+        string.center(width, fillchar) => return the centered string
+        string.count(sub, start, end) => return the count of the substring
+        string.encode(encoding, errors) => return the encoded string
+
+        string.startswith(prefix, start, end) => return the boolean value if the string starts with the prefix
+        string.endswith(suffix, start, end) => return the boolean value if the string ends with the suffix
+
+        string.find(sub, start, end) => return the index of the first occurrence of the substring if found else return -1
+        string.format(args, kwargs) => return the formatted string 
+        string.index(sub, start, end) => return the index of the first occurrence of the substring
+
+        string.isalnum() => return the boolean value if the string is alphanumeric (contains only alphabets and numbers) true or false
+        string.isalpha() => return the boolean value if the string is alphabetic (contains only alphabets) true or false
+        string.isdigit() => return the boolean value if the string is numeric (contains only numbers) true or false
+        string.islower() => return the boolean value if the string is lowercase true or false
+        string.isupper() => return the boolean value if the string is uppercase true or false
+
+        string.join(iterable) => return the joined string
+        string.partition(sep) => return the tuple of the string partitioned by the separator  
+
+        string.lower() => return the lowercase string
+        string.upper() => return the uppercase string
+
+        string.replace(old, new, count) => return the replaced string
+        string.split(sep, maxsplit) => return the split list of the string
+        string.strip(chars) => return the stripped string
+        string.swapcase() => return the swapped case string
+        string.title() => return the title case string
+        string.zfill(width) => return the zero filled string
+
+    string slicing
+
+        string[start:end] => access elements from start to end
+        string[start:end:step] => access elements from start to end with step
+
+    string concatenation
+
+        string1 + string2 => concatenate the strings
+
+    string formatting
+
+        string.format(args, kwargs) => return the formatted string
+
+
+
+
+set data structure
+
+    definition :- set is a collection of items in a sequence
+    syntax :- set = {item1, item2, item3, ...}
+
+    set characteristics
+
+        set is unordered
+        set is mutable  
+        set is dynamic
+        set allows duplicate values     
+
+    set methods
+
+        # Adding/Removing Elements
+        set.add(element) => add element to the set
+        set.remove(element) => remove element from the set 
+        set.discard(element) => remove element from the set if it is present
+        set.pop() => remove and return an arbitrary element from the set
+        
+        # Set Operations
+        set.union(set2) => return the union of the set and set2
+        set.intersection(set2) => return the intersection of the set and set2
+        set.difference(set2) => return the difference of the set and set2
+        set.symmetric_difference(set2) => return the symmetric difference of the set and set2
+        set.update(set2) => update the set with the elements of set2
+        
+        # Set Comparisons
+        set.isdisjoint(set2) => return the boolean value if the set and set2 have no common elements true or false
+        set.issubset(set2) => return the boolean value if the set is a subset of set2 true or false
+        set.issuperset(set2) => return the boolean value if the set is a superset of set2 true or false
+        
+        # Utility Methods
+        set.clear() => clear the set
+        set.copy() => copy the set
+
+    set operations
+
+        set1 | set2 => union of set1 and set2
+        example :-
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 | set2) => {1, 2, 3, 4, 5, 6}    
+
+        set1 & set2 => intersection of set1 and set2
+        example :-
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 & set2) => {4, 5, 6}
+
+        set1 - set2 => difference of set1 and set2
+        example :-
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 - set2) => {1, 2, 3}
+
+        set1 ^ set2 => symmetric difference of set1 and set2
+        example :-
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 ^ set2) => {1, 2, 3, 4, 5, 6}    
+
+    set comprehension
+
+        set = {expression for item in iterable if condition}
+
+    create set useing set()
+
+        set = set(iterable)
+
+        example :-
+            list = [1, 2, 3, 4, 5]
+            set = set(list)
+            print(set) => {1, 2, 3, 4, 5}
+
+
+dictionary data structure
+
+    definition :- dictionary is a collection of key-value pairs
+    syntax :- dictionary = {key1: value1, key2: value2, key3: value3, ...}
+
+    dictionary characteristics
+
+        dictionary is unordered
+        dictionary is mutable
+        dictionary is dynamic
+        dictionary allows duplicate values  
+    
+    dictionary methods
+
+        # Dictionary Creation/Copy Methods
+            dictionary.copy() => copy the dictionary
+            dictionary.fromkeys(iterable, value) => return the dictionary with the keys from the iterable and the value
+
+        # Dictionary Access Methods  
+            dictionary.get(key, default) => return the value of the key if it is present else return the default value
+            dictionary.setdefault(key, default) => return the value of the key if it is present else return the default value and add the key-value pair to the dictionary
+
+        # Dictionary View Methods
+            dictionary.items() => return the list of key-value pairs
+            dictionary.keys() => return the list of keys
+            dictionary.values() => return the list of values
+
+        # Dictionary Modification Methods
+            dictionary.clear() => clear the dictionary
+            dictionary.update(dictionary2) => update the dictionary with the elements of dictionary2
+            dictionary.pop(key, default) => remove the key-value pair from the dictionary and return the value if it is present else return the default value
+            dictionary.popitem() => remove and return an arbitrary key-value pair from the dictionary
+
+
+    dictionary operations
+
+        dictionary1[key] = value => add the key-value pair to the dictionary
+        dictionary1[key] = value => update the value of the key
+        del dictionary1[key] => delete the key-value pair from the dictionary
+        dictionary1.get(key, default) => return the value of the key if it is present else return the default value 
+
+    
+
+    dictionary comprehension
+
+        dictionary = {key: value for key, value in iterable}
+
