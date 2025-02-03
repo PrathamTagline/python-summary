@@ -525,9 +525,9 @@ set data structure
 
         set1 & set2 => intersection of set1 and set2
         example :-
-            set1 = {1, 2, 3}
-            set2 = {4, 5, 6}
-            print(set1 & set2) => {4, 5, 6}
+            set1 = {1, 2, 3, 4}
+            set2 = {3, 4, 5, 6}
+            print(set1 & set2) => {3, 4}
 
         set1 - set2 => difference of set1 and set2
         example :-
@@ -535,11 +535,21 @@ set data structure
             set2 = {4, 5, 6}
             print(set1 - set2) => {1, 2, 3}
 
+        example :- 
+            set1 = {1, 2, 3, 4}
+            set2 = {3, 4, 5, 6}
+            print(set1 - set2)  # Output: {1, 2}
+
         set1 ^ set2 => symmetric difference of set1 and set2
         example :-
             set1 = {1, 2, 3}
             set2 = {4, 5, 6}
             print(set1 ^ set2) => {1, 2, 3, 4, 5, 6}    
+
+        example :-
+            set1 = {1, 2, 3, 4}
+            set2 = {3, 4, 5, 6}
+            print(set1 ^ set2)  # Output: {1, 2, 5, 6}
 
     set comprehension
 
