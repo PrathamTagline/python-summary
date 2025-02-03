@@ -1,0 +1,1328 @@
+basic commands
+
+    python3 -- version => check python version
+    pip3 --version => check pip version
+    pip3 install <package_name> => install package
+    pip3 install <package_name> --upgrade => upgrade package
+    pip3 uninstall <package_name> => uninstall package
+    pip3 list => list all packages
+    pip3 show <package_name> => show package details
+    pip3 search <package_name> => search package
+
+
+run python file
+
+    python3 <file_name>.py => run python file
+
+
+basic python 
+
+    print statement
+
+        print("Hello World") => print statement automatically adds a new line at the end
+        print("Hello World", end="") => print statement without adding a new line at the end
+        print("Hello World", end="\t") => print statement with a tab at the end
+        print("Hello World", end="\n") => print statement with a new line at the end
+        print("Hello World", end="\r") => print statement with a carriage return at the end
+        print("Hello World", end="\b") => print statement with a backspace at the end
+        print("Hello World", end="\f") => print statement with a form feed at the end
+        print("Hello World", end="\v") => print statement with a vertical tab at the end
+        print("Hello World", end="\a") => print statement with a bell at the end
+        print("Hello World", end="\0") => print statement with a null character at the end
+        
+
+        print with variable
+
+            f => format the string
+            print(f"Hello {name}") => print statement with a variable
+            print("hello {}".format(name)) => print statement with multiple values with a format
+
+        print with multiple values
+
+            print(1, 2, 3, 4, 5) => print statement with multiple values
+            print(1, 2, 3, 4, 5, sep=",") => print statement with multiple values with a separator
+
+        print(object= separator= end= file= flush=)
+
+            print(1, 2, 3, 4, 5, sep=",", end="\n", file=sys.stdout, flush=False)
+            sep => separator (default is space)
+            end => end of the line (default is new line)    
+            file => file to write to (default is sys.stdout) not print to the console
+            flush => flush the output buffer (default is False) 
+
+input statement
+
+    input() => input statement
+
+    input("Enter your name: ") => input statement with a prompt by default return string we can convert to other type like int, float, etc. 
+
+
+all variables
+
+        a = 10 => integer variable
+        b = 10.5 => float variable
+        c = "Hello World" => string variable
+        d = True => boolean variable
+        e = None => null variable
+       [1, 2, 3, 4, 5] => list variable
+        g =  f = (1, 2, 3, 4, 5) => tuple variable
+        h = {1, 2, 3, 4, 5} => set variable
+        i = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"} => dictionary variable
+        j = 1+2j => complex variable
+        
+        
+        int :- simple integer,hexadecimal,binary,octal
+            a = 10 => simple integer
+            b = 0x10 => hexadecimal
+            c = 0b10 => binary
+            d = 0o10 => octal
+
+        float :- simple float,scientific notation
+            a = 10.5 => simple float
+            b = 1.23e-4 => scientific notation
+
+        string :- simple string,multi line string,raw string
+            a = "Hello World" => simple string
+            b = """Hello World""" => multi line string
+            c = r"Hello World" => raw string
+
+        list :- simple list,nested list
+            a = [1, 2, 3, 4, 5] => simple list
+            b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] => nested list
+
+        tuple :- simple tuple,nested tuple
+            a = (1, 2, 3, 4, 5) => simple tuple
+            b = ((1, 2, 3), (4, 5, 6), (7, 8, 9)) => nested tuple
+
+        set :- simple set,nested set
+            a = {1, 2, 3, 4, 5} => simple set
+            b = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}} => nested set 
+
+        dictionary :- simple dictionary,nested dictionary
+            a = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"} => simple dictionary
+            b = {{1: "one", 2: "two", 3: "three"}, {4: "four", 5: "five", 6: "six"}, {7: "seven", 8: "eight", 9: "nine"}} => nested dictionary
+
+        complex :- simple complex,nested complex
+            a = 1+2j => simple complex
+            b = (1+2j, 3+4j, 5+6j) => nested complex    
+
+    
+    Python Type Conversion
+
+        Implicit Conversion - automatic type conversion
+        Explicit Conversion - manual type conversion
+
+        
+        Implicit Conversion
+
+            a = 10
+            b = 10.5
+            c = a + b
+            print(c) => 20.5
+
+        Explicit Conversion
+
+            int(), float(), str(), bool(): Convert data types.
+            list(), tuple(), set(), dict(): Convert to respective collections.
+            ord(): Converts a character to its Unicode integer.
+            chr(): Converts an integer to a Unicode character.
+
+
+            a = 10
+            b = 10.5
+            c = int(a) + int(b)
+            print(c) => 20
+
+
+    Types of Python Operators
+
+        Arithmetic Operators
+        Assignment Operators
+        Comparison Operators
+        Logical Operators
+        Identity Operators
+        Membership Operators
+        Bitwise Operators
+
+        Arithmetic Operators
+
+            + => addition
+            - => subtraction
+            * => multiplication
+            / => division
+            % => modulus
+            ** => exponentiation
+            // => floor division
+
+        Assignment Operators
+
+            = => assignment
+            += => addition assignment
+            -= => subtraction assignment
+            *= => multiplication assignment
+            /= => division assignment
+            %= => modulus assignment
+            **= => exponentiation assignment
+            //= => floor division assignment
+
+        Comparison Operators
+
+            == => equal
+            != => not equal
+            > => greater than
+            < => less than
+            >= => greater than or equal to
+            <= => less than or equal to
+
+        Logical Operators
+
+            and => logical and
+            or => logical or
+            not => logical not
+
+        Identity Operators
+
+            is => identity
+            is not => not identity
+
+        Membership Operators
+
+            in => in
+            not in => not in
+
+        Bitwise Operators
+
+            & => bitwise and
+            | => bitwise or
+            ^ => bitwise xor
+            ~ => bitwise not
+            << => bitwise left shift
+            >> => bitwise right shift
+
+    
+
+
+python list data structure
+
+    definition :- list is a collection of items in a sequence
+    syntax :- list = [item1, item2, item3, ...]
+
+    List Characteristics
+
+        list is ordered
+        list is mutable
+        list is indexed
+        list is dynamic
+        list allows duplicate values   
+
+    List Items of Different Types   
+
+        list = [1, "Hello", 3.14, True, [1, 2, 3]]
+
+    List Indexing
+
+        positive indexing
+
+            list[index] => access element at index
+            list[start:end] => access elements from start to end
+            list[start:end:step] => access elements from start to end with step
+            
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[0]) => 1
+                print(list[1:3]) => ["Hello", 3.14]
+                print(list[1:3:2]) => ["Hello"]
+
+        negative indexing
+
+            list[-index] => access element at index from the end
+            list[-start:end] => access elements from start to end from the end
+            list[-start:end:step] => access elements from start to end with step from the end
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[-1]) => [1, 2, 3]
+                print(list[-1:3]) => [1, 2, 3]
+                print(list[-1:3:2]) => [1, 2, 3]
+    
+    slicing
+
+        Basic Slicing with :
+
+            list[start:end] => access elements from start to end
+            list[start:end:step] => access elements from start to end with step
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[1:3]) => ["Hello", 3.14]
+                print(list[1:3:2]) => ["Hello"]
+
+        Omitting start and end
+
+            list[:end] => access elements from start to end
+            list[start:] => access elements from start to end
+            list[:] => access all elements
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[:3]) => [1, "Hello", 3.14]
+                print(list[1:]) => ["Hello", 3.14, True, [1, 2, 3]]
+                print(list[:]) => [1, "Hello", 3.14, True, [1, 2, 3]]
+
+        Extended Slicing
+
+            list[start:end:step] => access elements from start to end with step
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[1:3:2]) => ["Hello"]
+
+        Negative step for Reversing
+
+            list[::-1] => reverse the list
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[::-1]) => [[1, 2, 3], True, 3.14, "Hello", 1]
+
+        Combining start, end, and step
+
+            list[start:end:step] => access elements from start to end with step
+
+            example :-
+
+                list = [1, "Hello", 3.14, True, [1, 2, 3]]
+                print(list[1:3:2]) => ["Hello"] 
+
+        example :-
+
+            
+
+            list = [1, "Hello", 3.14, True, [1, 2, 3]]
+            print(list[1:3]) => ["Hello", 3.14]
+            print(list[1:3:2]) => ["Hello"]
+            print(list[::-1]) => [[1, 2, 3], True, 3.14, "Hello", 1] => reverse the list
+            
+    Spread Operator in Python (for Unpacking)
+        
+        use * to unpack the list 
+
+        example :-
+
+            list = [1, 2, 3, 4, 5]
+            list2 = [*list, 6, 7, 8, 9, 10]
+            print(list2) => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    List Methods
+
+        list.append(element) => add element to the end of the list
+        list.insert(index, element) => insert element at index
+        list.remove(element) => remove element from the list
+        list.pop(index) => remove element at index
+        list.clear() => clear the list
+        list.sort() => sort the list
+        list.sort(reverse=True) => sort the list in reverse order
+        list.reverse() => reverse the list
+        list.copy() => copy the list
+        list.count(element) => count the number of times element appears in the list
+        list.index(element) => return the index of the first occurrence of element
+        list.extend(list2) => add elements of list2 to the end of the list
+        list.sort(key=lambda x: x[1]) => sort the list by the second element of each sublist
+        list.sort(key=lambda x: x[1], reverse=True) => sort the list by the second element of each sublist in reverse order
+
+
+tuple data structure
+
+    definition :- tuple is a collection of items in a sequence
+    syntax :- tuple = (item1, item2, item3, ...)
+
+    Tuple Characteristics
+
+        tuple is ordered
+        tuple is immutable
+        tuple is indexed
+        tuple allows duplicate values   
+
+    Tuple Items of Different Types   
+
+        tuple = (1, "Hello", 3.14, True, [1, 2, 3])
+
+    Tuple Indexing
+
+        positive indexing
+
+            tuple[index] => access element at index
+            tuple[start:end] => access elements from start to end
+            tuple[start:end:step] => access elements from start to end with step
+
+        negative indexing
+
+            tuple[-index] => access element at index from the end
+            tuple[-start:end] => access elements from start to end from the end
+            tuple[-start:end:step] => access elements from start to end with step from the end
+
+    tuple slicing
+
+        tuple[start:end] => access elements from start to end
+        tuple[start:end:step] => access elements from start to end with step
+
+    tuple methods
+
+        tuple.count(element) => count the number of times element appears in the tuple
+        tuple.index(element) => return the index of the first occurrence of element
+        tuple.len() => return the length of the tuple
+        tuple.max() => return the maximum element in the tuple
+        tuple.min() => return the minimum element in the tuple
+        tuple.sum() => return the sum of the elements in the tuple
+        tuple.sorted() => return the sorted list of the tuple
+        tuple.sorted(reverse=True) => return the sorted list of the tuple in reverse order
+        tuple.reverse() => return the reversed list of the tuple
+        tuple.copy() => return the copy of the tuple
+
+    tuple unpacking
+
+        tuple = (1, 2, 3, 4, 5)
+        a, b, c, d, e = tuple
+        print(a, b, c, d, e) => 1 2 3 4 5
+
+    tuple packing
+
+        tuple = (1, 2, 3, 4, 5)
+        a = 1
+        b = 2
+        c = 3
+        d = 4
+        e = 5
+        tuple = (a, b, c, d, e)
+        print(tuple) => (1, 2, 3, 4, 5)
+
+    Spread Operator in Python (for Unpacking)
+
+        tuple = (1, 2, 3, 4, 5)
+        list = [*tuple, 6, 7, 8, 9, 10]
+        print(list) => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+
+
+string data structure
+
+    definition :- string is a sequence of characters
+    syntax :- string = "Hello World"    
+
+    string characteristics
+
+        string is ordered
+        string is immutable
+        string is indexed
+        string allows duplicate values   
+
+    Python Multiline String
+
+        string = """Hello World
+        Hello World
+        Hello World"""
+
+    string methods
+
+        string.capitalize() => return the capitalized string
+        string.casefold() => return the casefolded string
+        string.center(width, fillchar) => return the centered string
+        string.count(sub, start, end) => return the count of the substring
+        string.encode(encoding, errors) => return the encoded string
+
+        string.startswith(prefix, start, end) => return the boolean value if the string starts with the prefix
+        string.endswith(suffix, start, end) => return the boolean value if the string ends with the suffix
+
+        string.find(sub, start, end) => return the index of the first occurrence of the substring if found else return -1
+        string.format(args, kwargs) => return the formatted string 
+        string.index(sub, start, end) => return the index of the first occurrence of the substring
+
+        string.isalnum() => return the boolean value if the string is alphanumeric (contains only alphabets and numbers) true or false
+        string.isalpha() => return the boolean value if the string is alphabetic (contains only alphabets) true or false
+        string.isdigit() => return the boolean value if the string is numeric (contains only numbers) true or false
+        string.islower() => return the boolean value if the string is lowercase true or false
+        string.isupper() => return the boolean value if the string is uppercase true or false
+
+        string.join(iterable) => return the joined string
+        string.partition(sep) => return the tuple of the string partitioned by the separator  
+
+        string.lower() => return the lowercase string
+        string.upper() => return the uppercase string
+
+        string.replace(old, new, count) => return the replaced string
+        string.split(sep, maxsplit) => return the split list of the string
+        string.strip(chars) => return the stripped string
+        string.swapcase() => return the swapped case string
+        string.title() => return the title case string
+        string.zfill(width) => return the zero filled string
+
+    string slicing
+
+        string[start:end] => access elements from start to end
+        string[start:end:step] => access elements from start to end with step
+
+    string concatenation
+
+        string1 + string2 => concatenate the strings
+
+    string formatting
+
+        string.format(args, kwargs) => return the formatted string
+
+
+
+
+set data structure
+
+    definition :- set is a collection of items in a sequence
+    syntax :- set = {item1, item2, item3, ...}
+
+    set characteristics
+
+        set is unordered
+        set is mutable  
+        set is dynamic
+        set allows duplicate values     
+
+    set methods
+
+        # Adding/Removing Elements
+        set.add(element) => add element to the set
+        set.remove(element) => remove element from the set 
+        set.discard(element) => remove element from the set if it is present
+        set.pop() => remove and return an arbitrary element from the set
+        
+        # Set Operations
+        set.union(set2) => return the union of the set and set2
+        set.intersection(set2) => return the intersection of the set and set2
+        set.difference(set2) => return the difference of the set and set2
+        set.symmetric_difference(set2) => return the symmetric difference of the set and set2
+        set.update(set2) => update the set with the elements of set2
+
+        # Set Comparisons
+        set.isdisjoint(set2) => return the boolean value if the set and set2 have no common elements true or false
+        set.issubset(set2) => return the boolean value if the set is a subset of set2 true or false
+        set.issuperset(set2) => return the boolean value if the set is a superset of set2 true or false
+        
+        # Utility Methods
+        set.clear() => clear the set
+        set.copy() => copy the set
+
+    set operations
+
+        set1 | set2 => union of set1 and set2
+        example :-
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 | set2) => {1, 2, 3, 4, 5, 6}    
+
+        set1 & set2 => intersection of set1 and set2
+        example :-
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 & set2) => {4, 5, 6}
+
+        set1 - set2 => difference of set1 and set2
+        example :-
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 - set2) => {1, 2, 3}
+
+        set1 ^ set2 => symmetric difference of set1 and set2
+        example :-
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 ^ set2) => {1, 2, 3, 4, 5, 6}    
+
+    set comprehension
+
+        set = {expression for item in iterable if condition}
+
+    create set useing set()
+
+        set = set(iterable)
+
+        example :-
+            list = [1, 2, 3, 4, 5]
+            set = set(list)
+            print(set) => {1, 2, 3, 4, 5}
+
+
+dictionary data structure
+
+    definition :- dictionary is a collection of key-value pairs
+    syntax :- dictionary = {key1: value1, key2: value2, key3: value3, ...}
+
+    dictionary characteristics
+
+        dictionary is unordered
+        dictionary is mutable
+        dictionary is dynamic
+        dictionary allows duplicate values  
+    
+    dictionary methods
+
+        # Dictionary Creation/Copy Methods
+            dictionary.copy() => copy the dictionary
+            dictionary.fromkeys(iterable, value) => return the dictionary with the keys from the iterable and the value
+
+        # Dictionary Access Methods  
+            dictionary.get(key, default) => return the value of the key if it is present else return the default value
+            dictionary.setdefault(key, default) => return the value of the key if it is present else return the default value and add the key-value pair to the dictionary
+
+        # Dictionary View Methods
+            dictionary.items() => return the list of key-value pairs
+            dictionary.keys() => return the list of keys
+            dictionary.values() => return the list of values
+
+        # Dictionary Modification Methods
+            dictionary.clear() => clear the dictionary
+            dictionary.update(dictionary2) => update the dictionary with the elements of dictionary2
+            dictionary.pop(key, default) => remove the key-value pair from the dictionary and return the value if it is present else return the default value
+            dictionary.popitem() => remove and return an arbitrary key-value pair from the dictionary
+
+
+    dictionary operations
+
+        dictionary1[key] = value => add the key-value pair to the dictionary
+        dictionary1[key] = value => update the value of the key
+        del dictionary1[key] => delete the key-value pair from the dictionary
+        dictionary1.get(key, default) => return the value of the key if it is present else return the default value 
+
+    
+
+    dictionary comprehension
+
+        dictionary = {key: value for key, value in iterable}
+
+    create dictionary useing dict()
+
+        dictionary = dict(key1=value1, key2=value2, key3=value3, ...)
+
+        example :-
+            list = [("name", "John"), ("age", 30), ("city", "New York")]
+            dictionary = dict(list)
+            print(dictionary) => {'name': 'John', 'age': 30, 'city': 'New York'}    
+
+    
+python functions
+
+    syntax
+        def function_name(parameters):
+            # function body
+            pass    
+
+    method or function overloading
+
+        method or function overloading is the process of defining
+        multiple methods or functions with the same name but 
+        different parameters or different number of parameters   
+
+        In Python, method overloading is not supported directly like in languages such as Java or C++. 
+        Instead, Python handles this using default arguments, 
+        variable-length arguments (*args and **kwargs), or conditional logic within a single method.
+
+        method or function overloading 
+
+
+            from multipledispatch import dispatch
+
+            @dispatch(int, int)
+            def function(a, b):
+                print(a, b)
+
+            @dispatch(int, int, int)
+            def function(a, b, c):
+                print(a, b, c)
+            function(1, 2) => 1 2
+            function(1, 2, 3) => 1 2 3  
+
+    
+    Python Lambda/Anonymous Function
+
+        lambda arguments: expression
+
+        example :-
+            lambda x: x + 1
+            print(lambda x: x + 1(1)) => 2  
+
+variable scope
+
+    local variable :- variable defined inside a function
+    global variable :- variable defined outside a function      
+
+    example :-
+        def function():
+            local_variable = 10
+            print(local_variable)
+        function()
+        print(local_variable) => NameError: name 'local_variable' is not defined
+
+    global variable
+
+    def function():
+        global global_variable
+        global_variable = 10
+        print(global_variable)
+    function()
+    print(global_variable) => 10
+
+
+global keyword
+
+    global keyword is used to declare a global variable
+    example :-
+        global_variable = 10
+        def function():
+            global global_variable
+            global_variable = 20
+            print(global_variable)
+        function()
+        print(global_variable) => 20    
+
+
+
+python recursion
+
+    definition :- recursion is the process of calling a function by itself
+    syntax :- def function_name(parameters):
+                if condition:
+                    return function_name(parameters)
+                else:
+                    return result
+
+    example :-
+        def factorial(n):
+            if n == 1:
+                return 1
+            else:
+                return n * factorial(n-1)
+        print(factorial(5)) => 120    
+
+
+python modules
+
+    definition :- modules are files containing Python code that can be imported into another Python program
+    syntax :- import module_name
+
+    example :-
+        import math
+        print(math.sqrt(16)) => 4.0 
+
+    import module_name as alias
+
+    example :-
+        import math as m
+        print(m.sqrt(16)) => 4.0             
+
+
+
+python main function
+
+    definition :- main function is the function that is executed when the program is run
+    syntax :- if __name__ == "__main__":
+                # main function body
+                pass
+
+    example :-
+        if __name__ == "__main__":
+            print("Hello World")    
+
+
+
+python directory and files management
+
+    os module
+
+        # Directory operations
+            os.getcwd() => return the current working directory
+            os.chdir(path) => change the current working directory
+            os.listdir(path) => return the list of files and directories in the directory
+            os.mkdir(path) => create a new directory
+            os.rmdir(path) => remove a directory
+ 
+        # File operations
+            os.rename(old_name, new_name) => rename a file or directory
+            os.remove(path) => remove a file
+
+        # Path operations
+            os.path.join(path1, path2) => join the paths
+            os.path.exists(path) => return the boolean value if the path exists true or false
+            os.path.isdir(path) => return the boolean value if the path is a directory true or false
+            os.path.isfile(path) => return the boolean value if the path is a file true or false
+            os.path.abspath(path) => return the absolute path of the file
+            os.path.basename(path) => return the base name of the file
+            os.path.dirname(path) => return the directory name of the file
+            os.path.split(path) => return the tuple of the directory and the file name
+            os.path.splitext(path) => return the tuple of the file name and the extension
+            
+        # File/Directory information
+            os.path.getsize(path) => return the size of the file in bytes
+            os.path.getmtime(path) => return the last modification time of the file in seconds since the epoch
+            os.path.getatime(path) => return the last access time of the file in seconds since the epoch
+            os.path.getctime(path) => return the creation time of the file in seconds since the epoch      
+
+    shutil module
+
+        # Copy operations
+            shutil.copy(src, dst) => copy a file from src to dst
+            shutil.copy2(src, dst) => copy a file from src to dst
+            shutil.copytree(src, dst) => copy a directory from src to dst
+
+        # Move and remove operations
+            shutil.move(src, dst) => move a file or directory from src to dst
+            shutil.rmtree(path) => remove a directory and all its contents
+
+    pathlib module
+
+        # Path object creation and basic info
+            pathlib.Path(path) => create a path object
+            pathlib.Path.cwd() => return the current working directory
+            pathlib.Path.home() => return the home directory
+
+        # Path checking
+            pathlib.Path.exists() => return the boolean value if the path exists true or false
+            pathlib.Path.is_dir() => return the boolean value if the path is a directory true or false
+            pathlib.Path.is_file() => return the boolean value if the path is a file true or false
+
+        # Directory operations
+            pathlib.Path.iterdir() => return the iterator of the directory contents
+            pathlib.Path.glob(pattern) => return the iterator of the files and directories that match the pattern
+            pathlib.Path.rglob(pattern) => return the iterator of the files and directories that match the pattern recursively
+            pathlib.Path.mkdir(mode=0o777, parents=False, exist_ok=False) => create a new directory
+            pathlib.Path.rmdir() => remove a directory
+
+        # File operations
+            pathlib.Path.rename(target) => rename a file or directory
+            pathlib.Path.unlink() => remove a file
+            pathlib.Path.touch() => create a new file
+
+        # File permissions and info
+            pathlib.Path.stat() => return the stat information of the path
+            pathlib.Path.chmod(mode) => change the mode of the path
+            pathlib.Path.chown(uid, gid) => change the owner and group of the path
+
+        # File reading/writing
+            pathlib.Path.open(mode='r', buffering=-1, encoding=None, errors=None, newline=None) => open a file
+            pathlib.Path.read_text() => read the text from the file
+            pathlib.Path.write_text(data, encoding=None, errors=None) => write the text to the file
+            pathlib.Path.read_bytes() => read the bytes from the file
+            pathlib.Path.write_bytes(data) => write the bytes to the file
+
+
+python exceptions
+
+    definition :- exceptions are errors that occur during the execution of a program
+    syntax :- try:
+                # code that may raise an exception
+            except ExceptionType:
+                # code that handles the exception
+            else:
+                # code that runs if no exception occurs
+            finally:
+                # code that runs regardless of whether an exception occurs or not
+
+
+    example :-
+        try:
+            print(10/0)
+        except ZeroDivisionError:
+            print("Division by zero is not allowed")
+        else:
+            print("No exception occurred")
+        finally:
+            print("This will always be executed")   
+
+    
+
+
+python classes and objects
+
+    class definition :- class is a blueprint for creating objects
+    object definition :- object is an instance of a class
+
+
+    class syntax :- class ClassName:
+                    # class body
+                    pass
+
+    object syntax :- object = ClassName()
+
+    example :-
+
+        # class definition
+        class Person:
+
+            # constructor
+            # __init__ is a special method in python classes that is used to initialize the object
+            def __init__(self, name, age):
+                self.name = name
+                self.age = age
+
+            # class method
+            def display(self):  
+                print(self.name, self.age)
+
+        # create object
+        person = Person("John", 30)
+        person.display() => John 30  
+
+        # Access Class Attributes Using Objects using dot( . ) notation
+        print(person.name) => John
+        print(person.age) => 30
+
+        # Access Class Attributes Using Class Name
+
+
+
+python object oriented programming
+
+    - object oriented main pillars
+        1. Encapsulation - Wrapping data and methods that work on data within one unit
+        2. Inheritance - Creating new classes that are built upon existing classes
+        3. Polymorphism - The ability to present the same interface for different underlying forms (data types or classes)
+        4. Abstraction - Hiding complex implementation details and showing only necessary features of an object
+
+
+    abstraction
+
+        definition :- Abstraction is the process of hiding the complex implementation details and showing only the necessary features of an object        
+
+        example :-
+
+        # abstract class
+        from abc import ABC, abstractmethod
+                                                #abc => abstract base class
+        class Shape(ABC):
+            @abstractmethod
+            def area(self):
+                pass
+
+            @abstractmethod
+            def perimeter(self):
+                pass
+
+        # concrete class
+        class Circle(Shape):
+            def __init__(self, radius):
+                self.radius = radius
+
+            def area(self):
+                return 3.14 * self.radius * self.radius
+
+            def perimeter(self):
+                return 2 * 3.14 * self.radius
+
+        class Rectangle(Shape):
+            def __init__(self, length, width):
+                self.length = length
+                self.width = width
+
+            def area(self):
+                return self.length * self.width
+
+            def perimeter(self):
+                return 2 * (self.length + self.width)
+
+        # create objects
+        circle = Circle(5)
+        rect = Rectangle(4, 3)
+
+        print(circle.area())      # Output: 78.5
+        print(circle.perimeter()) # Output: 31.4
+        print(rect.area())        # Output: 12
+        print(rect.perimeter())   # Output: 14
+
+        # Cannot instantiate abstract class
+        # shape = Shape()  # This will raise an error
+
+
+        how to extract the method or entire class from the abstract class  
+
+        syntax :-   
+            function_name.(method_name or property_name)
+            example :-
+            print(Circle.area) => <function Circle.area at 0x10a640>
+            print(Circle.area(circle)) => 78
+
+    
+    Inheritance :
+
+        definition :- Inheritance is the process of creating a new class that is a modified version of an existing class
+
+       types of inheritance :-
+        1. Single inheritance
+        2. Multiple inheritance
+        3. Multilevel inheritance
+        4. Hierarchical inheritance
+        5. Hybrid inheritance
+
+        syntax :-
+            class ParentClass:
+                # parent class attributes and methods
+                pass
+
+            class ChildClass(ParentClass):
+                # child class attributes and methods
+                pass    
+
+        1. Single inheritance :-
+            class ParentClass:
+                pass
+
+            class ChildClass(ParentClass):
+                pass    
+
+        2. Multiple inheritance :-
+            class ParentClass1:
+                pass
+
+            class ParentClass2:
+                pass
+
+            class ChildClass(ParentClass1, ParentClass2):
+                pass
+        
+        3. Multilevel inheritance :-
+            class ParentClass:
+                pass
+
+            class ChildClass(ParentClass):
+                pass
+
+            class GrandChildClass(ChildClass):
+                pass
+
+        4. Hierarchical inheritance :-
+            class ParentClass:
+                pass
+
+            class ChildClass1(ParentClass):
+                pass
+
+            class ChildClass2(ParentClass):
+                pass    
+
+        5. Hybrid inheritance :-
+            class ParentClass1:
+                pass
+
+            class ParentClass2:
+                pass
+
+            class ChildClass1(ParentClass1):
+                pass
+
+            class ChildClass2(ParentClass):
+                pass    
+
+            class GrandChildClass(ChildClass1, ChildClass2):
+                pass
+
+
+encapsulation
+
+    definition :- Encapsulation is the process of hiding the complex implementation details and showing only the necessary features of an object
+
+    example :-
+        class BankAccount:
+            def __init__(self):
+                self.__balance = 0  # private variable
+            
+            def deposit(self, amount):
+                if amount > 0:
+                    self.__balance += amount
+                    return True
+                return False
+            
+            def get_balance(self):
+                return self.__balance
+            
+            def withdraw(self, amount):
+                if amount <= self.__balance:
+                    self.__balance -= amount
+                    return True
+                return False
+
+        # Usage
+        account = BankAccount()
+        account.deposit(1000)
+        print(account.get_balance())  # => 1000
+        account.withdraw(500)
+        print(account.get_balance())  # => 500
+        print(account.__balance)  # => AttributeError: 'BankAccount' object has no attribute '__balance'
+
+    In this example:
+        - The balance is a private variable (denoted by __)
+        - Access to balance is only through public methods (deposit, withdraw, get_balance)
+        - The internal implementation is hidden from the outside world
+        - Data validation is handled within the class methods
+
+
+    private and protected variables
+
+        definition :- Private and protected variables are used to hide the variables from the outside world
+
+    example :-
+        class Person:
+            def __init__(self, name, age):
+                self.__name = name  # private variable
+                self._age = age  # protected variable
+
+        person = Person("John", 30)
+        print(person.__name)  # => AttributeError: 'Person' object has no attribute '__name'
+        print(person._age)  # => 30
+
+    In this example:
+        - __name is a private variable (denoted by __)
+        - _age is a protected variable (denoted by _)
+        - Access to private and protected variables is restricted
+        - Private variables are not accessible outside the class
+        - Protected variables are accessible within the class and its subclasses
+
+
+polymorphism
+
+    definition :- Polymorphism is the ability to present the same interface for different underlying forms (data types or classes)
+
+    example :-
+        class Animal:
+            def speak(self):
+                pass
+
+        class Dog(Animal):
+            def speak(self):
+                return "Woof"   
+
+        class Cat(Animal):
+            def speak(self):
+                return "Meow"
+
+        animal = Animal()
+        dog = Dog()
+        cat = Cat()
+        print(animal.speak())  # => Animal speaks
+        print(dog.speak())  # => Woof
+        print(cat.speak())  # => Meow       
+
+    In this example:
+        - Animal is the base class
+        - Dog and Cat are subclasses of Animal
+        - The speak method is overridden in the Dog and Cat classes
+        - Polymorphism allows us to use the same interface (speak method) for different classes
+        - The actual method called depends on the specific class instance (dog or cat)
+
+
+
+advanced python
+
+    - advanced python topics
+        1. metaclasses
+        2. descriptors
+        3. decorators
+        4. context managers
+        5. property decorators
+        6. class methods and static methods
+        7. class inheritance
+        8. class composition
+        9. magic methods
+        10. abstract base classes
+        11. multiple inheritance
+        12. operator overloading
+        13. data models
+        14. class decorators
+
+
+1. metaclasses
+
+    definition :- Metaclasses are classes that define the behavior of other classes
+
+    example :-
+        class MetaClass(type):
+            def __new__(cls, name, bases, attrs):
+                print(f"Creating class {name} with bases {bases} and attributes {attrs}")
+                return super().__new__(cls, name, bases, attrs)
+
+        class MyClass(metaclass=MetaClass):
+            pass    
+
+    In this example:
+        - MetaClass is a metaclass that defines the behavior of MyClass
+        - The __new__ method is used to create the class
+        - The name, bases, and attrs parameters are used to create the class
+        - The super().__new__(cls, name, bases, attrs) method is used to create the class
+
+
+2. descriptors
+
+    definition :- Descriptors are classes that define the behavior of other classes
+
+    example :-
+        class Descriptor:
+            def __get__(self, instance, owner):
+                return self.value
+
+        class MyClass:
+            descriptor = Descriptor()
+            descriptor.value = 10
+
+        my_instance = MyClass()
+        print(my_instance.descriptor)  # => 10
+
+    In this example:
+        - Descriptor is a descriptor that defines the behavior of MyClass
+        - The __get__ method is used to get the value of the descriptor
+        - The instance and owner parameters are used to get the value of the descriptor
+        - The descriptor.value = 10 line sets the value of the descriptor
+        - The my_instance.descriptor line gets the value of the descriptor
+
+    
+
+
+    python built in functions
+
+        - int(), float(), str(), bool(): Convert data types.
+        - list(), tuple(), set(), dict(): Convert to respective collections.
+        - ord(): Converts a character to its Unicode integer.
+        - chr(): Converts an integer to a Unicode character.
+
+
+    - reversed(iterable): Returns a reversed iterator.
+        example :-
+            print(list(reversed([1, 2, 3, 4, 5]))) => [5, 4, 3, 2, 1]
+    
+
+    - enumerate(iterable, start=0): Returns an enumerate object.
+        example :-
+            print(list(enumerate([1, 2, 3, 4, 5]))) => [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5)]
+    
+
+    - zip(iterable1, iterable2, ...): Returns a zip object.
+        example :-
+            print(list(zip([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]))) => [(1, 6), (2, 7), (3, 8), (4, 9), (5, 10)]
+    
+
+    - filter(function, iterable): Returns an iterator with elements that pass the filter.
+        example :-
+            print(list(filter(lambda x: x % 2 == 0, [1, 2, 3, 4, 5]))) => [2, 4]
+    
+
+    - map(function, iterable): Returns an iterator with elements that pass the map.
+        example :-
+            print(list(map(lambda x: x * 2, [1, 2, 3, 4, 5]))) => [2, 4, 6, 8, 10]
+    
+
+    - sorted(iterable, key=None, reverse=False): Returns a sorted list.
+        example :-
+            print(sorted([5, 2, 8, 1, 3])) => [1, 2, 3, 5, 8]
+
+        example 2 :-
+            print(sorted([5, 2, 8, 1, 3], reverse=True)) => [8, 5, 3, 2, 1]
+        
+        example 3 :-
+            print(sorted([5, 2, 8, 1, 3], key=lambda x: x % 2)) => [2, 8, 5, 1, 3]  
+    
+
+    - all(iterable): Returns True if all elements are true.
+        example :-
+            print(all([True, True, True, True])) => True
+    
+
+    - any(iterable): Returns True if any element is true.
+        example :-
+            print(any([True, False, True, False])) => True
+
+
+    - sum(iterable, start=0): Returns the sum of the elements.
+        example :-
+            print(sum([1, 2, 3, 4, 5])) => 15
+
+
+    - min(iterable): Returns the smallest element.
+        example :-
+            print(min([1, 2, 3, 4, 5])) => 1
+
+
+    - max(iterable): Returns the largest element.
+        example :-
+            print(max([1, 2, 3, 4, 5])) => 5
+
+
+    - len(iterable): Returns the length of the iterable.
+        example :-
+            print(len([1, 2, 3, 4, 5])) => 5
+
+
+    - abs(number): Returns the absolute value of the number.
+        example :-
+            print(abs(-10)) => 10
+
+
+    - round(number, ndigits=None): Returns the rounded number. ndigits is the number of decimal places to round to.
+        example :-
+            print(round(1.5)) => 2
+
+        example 2 :-
+            print(round(1.555, 2)) => 1.56
+
+
+    - pow(base, exp, mod=None): Returns the power of the number.
+        example :-
+            print(pow(2, 3)) => 8
+
+
+    - divmod(a, b): Returns the quotient and remainder of the division. 
+        example :-
+            print(divmod(10, 3)) => (3, 1)  
+
+
+    range(start, stop, step): Returns a range object.
+        example :-
+            print(list(range(0, 10, 2))) => [0, 2, 4, 6, 8] 
+    
+    iter(iterable): Returns an iterator.
+    next(iterator): Returns the next item from the iterator.
+        example :-
+            nums = [1, 2, 3]
+            it = iter(nums)
+            print(next(it))  # Output: 1
+            print(next(it))  # Output: 2
+            print(next(it))  # Output: 3
+
+    slice(start, stop, step): Returns a slice object.
+        example :-
+            nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            print(nums[slice(0, 10, 2)]) => [1, 3, 5, 7, 9]
+
+    frozenset(iterable): Returns a frozenset object.
+        example :-
+            print(frozenset([1, 2, 3, 4, 5])) => frozenset({1, 2, 3, 4, 5})
+
+    id(object): Returns the memory address of the object.
+        example :-
+            print(id(1)) => 140737488346288
+
+    hash(object): Returns the hash value of the object.
+        example :-
+            print(hash(1)) => 1
+
+    memoryview(object): Returns a memoryview object.
+        example :-
+            print(memoryview(b'Hello, World!')) => <memory at 0x7f8b4511ee80>   
+
+    open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None): Opens a file and returns a file object.
+        example :-
+            with open('example.txt', 'r') as file:
+                print(file.read()) => Hello, World! 
+
+    
+    info(object): Returns information about the object.
+        example :-
+            print(info(1)) => <class 'int'> 
