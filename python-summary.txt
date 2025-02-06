@@ -14,7 +14,6 @@ run python file
 
     python3 <file_name>.py => run python file
 
-
 basic python 
 
     print statement
@@ -55,6 +54,120 @@ input statement
     input() => input statement
 
     input("Enter your name: ") => input statement with a prompt by default return string we can convert to other type like int, float, etc. 
+
+
+
+Naming conventions
+
+    - Naming conventions in Python are a set of guidelines and best practices for naming variables, functions, classes, modules, and other entities in your code.
+    - These conventions are not enforced by the Python interpreter but are widely followed by the Python community to ensure consistency and readability.
+    - The most widely adopted naming conventions are outlined in PEP 8 (Python Enhancement Proposal 8)
+
+
+        1.Variables and Functions
+            
+            Snake Case: Use lowercase letters with words separated by underscores (_).
+
+            Example: my_variable, calculate_total_price()
+
+        Descriptive Names: Use meaningful names that describe the purpose of the variable or function.
+
+        Example: user_name, get_user_details()
+
+        2. Constants
+        
+            Uppercase with Underscores: Use all uppercase letters with words separated by underscores.
+
+            Example: MAX_CONNECTIONS, DEFAULT_TIMEOUT
+
+            Constants are typically defined at the module level.
+
+        3. Classes
+            
+            Pascal Case (Capitalized Camel Case): Start each word with a capital letter and do not use underscores.
+
+            Example: MyClass, DatabaseConnection
+
+            Class names should be nouns or noun phrases, as they represent objects.
+
+        4. Methods and Instance Variables
+            
+            Snake Case: Use lowercase letters with words separated by underscores.
+
+            Example: class_method(), instance_variable
+
+            For non-public methods or variables, prefix with a single underscore (_) to indicate they are intended for internal use.
+
+             Example: _internal_method(), _private_variable
+
+        5. Private Variables and Methods
+        
+            Double Underscore Prefix: Use two leading underscores (__) to indicate name mangling (not truly private, but harder to access accidentally).
+
+            Example: __private_variable, __private_method()
+
+        6. Modules and Packages
+            
+            Lowercase with Underscores: Use short, lowercase names for modules and packages. Avoid underscores if possible.
+
+            Example: mymodule.py, package_name
+
+            Module names should be short and descriptive.
+
+        7. Global Variables
+            
+            Snake Case: Use lowercase letters with underscores, similar to regular variables.
+
+            Example: global_variable
+
+            Avoid using global variables unless absolutely necessary.
+
+        8. Functions and Methods
+        
+            Snake Case: Use lowercase letters with underscores.
+
+            Example: def calculate_total():
+
+            Use verbs or verb phrases for function names, as they represent actions.
+
+            Example: get_user(), validate_input()
+
+        9. Special Methods (Magic/Dunder Methods)
+            
+            Double Underscore Prefix and Suffix: Use double underscores (__) at the beginning and end of the name.
+
+            Example: __init__(), __str__(), __len__()
+
+            These methods are used for operator overloading and other special behaviors.
+
+        10. Avoid Using These Names
+            
+            Single-character names (except for counters like i, j, k in loops).
+
+            Names that conflict with Python keywords (e.g., class, def, import).
+
+            Names that are too generic or ambiguous (e.g., data, value, temp).
+
+        11. Abbreviations
+            
+            Avoid unnecessary abbreviations. Use full, descriptive names unless the abbreviation is widely understood.
+
+            Example: Use index instead of idx, unless idx is a common convention in your codebase.
+
+        12. File Naming
+            
+            Use lowercase letters with underscores for script and module names.
+
+            Example: my_script.py, data_processor.py
+
+            Avoid spaces or special characters in file names.
+
+        13. Avoid Confusing Names
+            
+            Avoid using names that differ only by case (e.g., myvar and MyVar).
+
+            Avoid using names that are too similar to built-in functions or types (e.g., list, str, dict).
+
 
 
 all variables
@@ -535,21 +648,11 @@ set data structure
             set2 = {4, 5, 6}
             print(set1 - set2) => {1, 2, 3}
 
-        example :- 
-            set1 = {1, 2, 3, 4}
-            set2 = {3, 4, 5, 6}
-            print(set1 - set2)  # Output: {1, 2}
-
         set1 ^ set2 => symmetric difference of set1 and set2
         example :-
             set1 = {1, 2, 3}
             set2 = {4, 5, 6}
             print(set1 ^ set2) => {1, 2, 3, 4, 5, 6}    
-
-        example :-
-            set1 = {1, 2, 3, 4}
-            set2 = {3, 4, 5, 6}
-            print(set1 ^ set2)  # Output: {1, 2, 5, 6}
 
     set comprehension
 
@@ -1076,11 +1179,14 @@ encapsulation
         - Data validation is handled within the class methods
 
 
+
+
+
     private and protected variables
 
         definition :- Private and protected variables are used to hide the variables from the outside world
 
-    example :-
+        example :-
         class Person:
             def __init__(self, name, age):
                 self.__name = name  # private variable
@@ -1098,7 +1204,73 @@ encapsulation
         - Protected variables are accessible within the class and its subclasses
 
 
-polymorphism
+
+    - In Python, the concepts of "private" and "protected" variables are not enforced as strictly as in some other programming languages like Java or C++.
+    - Python uses naming conventions to indicate the intended visibility of variables and methods.
+    - A variable or method is considered private if its name starts with two underscores (__), e.g., __private_var.
+
+    ********** important **********
+
+    - Python performs name mangling on private variables. This means the interpreter changes the name of the variable to _ClassName__private_var to make 
+      it harder to access directly from outside the class.
+
+    - Access: While it is not truly private, the name mangling makes it more difficult to access accidentally. However,
+      you can still access it if you know the mangled name.
+
+
+    example  : - 
+
+        class MyClass:
+        def __init__(self):
+        self.__private_var = 42
+
+        obj = MyClass()
+
+        # This will raise an AttributeError
+        # print(obj.__private_var)
+
+        # But you can still access it using the mangled name
+        print(obj._MyClass__private_var)  # Output: 42
+
+   
+
+
+
+
+
+    Protected Variables
+        
+        - Naming Convention: A variable or method is considered protected if its name starts with one underscore (_), e.g., _protected_var.
+        - Behavior: This is just a convention and does not enforce any access restrictions. It is a signal to other developers that the variable
+          or method is intended for internal use within the class or its subclasses.
+        
+        - Access: You can still access it directly from outside the class, but it is considered bad practice.
+
+        Example:
+
+        python
+        Copy
+        class MyClass:
+            def __init__(self):
+                self._protected_var = 42
+
+        obj = MyClass()
+        # You can still access it directly
+        print(obj._protected_var)  # Output: 42
+        polymorphism
+
+
+        - In summary, Python's private and protected variables are not truly private or protected in the strictest sense, 
+          but they provide mechanisms to indicate intended usage and reduce the likelihood of accidental access.
+
+
+
+ ********** important end **********
+
+
+
+
+
 
     definition :- Polymorphism is the ability to present the same interface for different underlying forms (data types or classes)
 
@@ -1148,7 +1320,7 @@ advanced python
         12. operator overloading
         13. data models
         14. class decorators
-
+        15. code structure of python 
 
 1. metaclasses
 
@@ -1336,3 +1508,91 @@ advanced python
     info(object): Returns information about the object.
         example :-
             print(info(1)) => <class 'int'> 
+
+
+
+
+********** 15 code structure of python  *************
+
+        # 1. Imports (Standard Library, Third-Party, and Local)
+        import os
+        import math
+        from datetime import datetime
+
+        # 2. Constants (UPPERCASE with underscores)
+        MAX_USERS = 100
+        DEFAULT_TIMEOUT = 30
+        PI = math.pi
+
+        # 3. Global Variables (snake_case)
+        current_user = "JohnDoe"
+        connection_status = False
+
+        # 4. Functions (snake_case)
+        def calculate_area(radius):
+            """Calculate the area of a circle."""
+            return PI * (radius ** 2)
+
+        def greet_user(name):
+            """Greet the user with a personalized message."""
+            return f"Hello, {name}!"
+
+        # 5. Classes (PascalCase)
+        class User:
+            """A class to represent a user."""
+
+            def __init__(self, name, age):
+                """Initialize user attributes."""
+                self.name = name  # Public attribute
+                self._age = age   # Protected attribute (intended for internal use)
+
+            def display_info(self):
+                """Display user information."""
+                print(f"Name: {self.name}, Age: {self._age}")
+
+            def _private_method(self):
+                """A private method (intended for internal use)."""
+                print("This is a private method.")
+
+        class Admin(User):
+            """A class to represent an admin user, inheriting from User."""
+
+            def __init__(self, name, age, access_level):
+                """Initialize admin attributes."""
+                super().__init__(name, age)
+                self.access_level = access_level
+
+            def display_access_level(self):
+                """Display the admin's access level."""
+                print(f"Access Level: {self.access_level}")
+
+        # 6. Main Program Logic
+        if __name__ == "__main__":
+            # Using constants
+            print(f"Max Users Allowed: {MAX_USERS}")
+
+            # Using global variables
+            print(f"Current User: {current_user}")
+
+            # Calling functions
+            area = calculate_area(5)
+            print(f"Area of the circle: {area}")
+
+            greeting = greet_user(current_user)
+            print(greeting)
+
+            # Creating objects from classes
+            user = User("Alice", 30)
+            user.display_info()
+
+            admin = Admin("Bob", 40, "Superuser")
+            admin.display_info()
+            admin.display_access_level()
+
+            # Accessing protected and private attributes/methods (not recommended but possible)
+            print(f"Admin's age (protected): {admin._age}")
+            # admin._private_method()  # This would work but is not recommended
+
+
+
+********** 15 code structure of python  end *************
