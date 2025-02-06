@@ -638,9 +638,9 @@ set data structure
 
         set1 & set2 => intersection of set1 and set2
         example :-
-            set1 = {1, 2, 3, 4}
-            set2 = {3, 4, 5, 6}
-            print(set1 & set2) => {3, 4}
+            set1 = {1, 2, 3}
+            set2 = {4, 5, 6}
+            print(set1 & set2) => {4, 5, 6}
 
         set1 - set2 => difference of set1 and set2
         example :-
@@ -1270,7 +1270,7 @@ encapsulation
 
 
 
-
+Polymorphism
 
     definition :- Polymorphism is the ability to present the same interface for different underlying forms (data types or classes)
 
@@ -1321,51 +1321,243 @@ advanced python
         13. data models
         14. class decorators
         15. code structure of python 
+        
 
 1. metaclasses
 
-    definition :- Metaclasses are classes that define the behavior of other classes
+    definition :- In Python, a metaclass is a class that defines the behavior of other classes. In other words, 
+                  a metaclass is the "class of a class." While regular classes define the behavior of instances (objects),
+                  metaclasses define the behavior of classes themselves. 
 
-    example :-
-        class MetaClass(type):
-            def __new__(cls, name, bases, attrs):
-                print(f"Creating class {name} with bases {bases} and attributes {attrs}")
-                return super().__new__(cls, name, bases, attrs)
+    What is a Metaclass?
+        
+        - A metaclass is a class that creates and controls other classes.
+        - Just as a class defines how instances (objects) behave, a metaclass defines how classes behave.
+        - The default metaclass in Python is type. When you define a class, Python uses type as its metaclass by default.
 
-        class MyClass(metaclass=MetaClass):
-            pass    
 
-    In this example:
-        - MetaClass is a metaclass that defines the behavior of MyClass
-        - The __new__ method is used to create the class
-        - The name, bases, and attrs parameters are used to create the class
-        - The super().__new__(cls, name, bases, attrs) method is used to create the class
+    Why is Metaclass Important?
+        Metaclasses are important because they allow you to:
 
+        - Customize Class Creation: You can control how classes are created, modified, or initialized.
+        - Enforce Patterns: Metaclasses can enforce design patterns, such as singletons, or ensure that certain attributes or methods are present in all subclasses.
+        - Add Functionality: You can automatically add methods, attributes, or behavior to classes at creation time.
+        - Framework Development: Metaclasses are widely used in frameworks like Django, SQLAlchemy, and others to provide advanced features like ORM (Object-Relational Mapping) or automatic registration of models.
+
+    Creating a Custom Metaclass
+
+        - To create a custom metaclass, you subclass type and override its __new__ or __init__ methods.
+
+        Example:
+     
+        class Meta(type):
+            def __new__(cls, name, bases, dct):
+                # Add a new attribute to the class
+                dct['version'] = 1.0
+                # Create the class
+                return super().__new__(cls, name, bases, dct)
+
+        class MyClass(metaclass=Meta):
+            pass
+
+        # Access the attribute added by the metaclass
+        print(MyClass.version)  # Output: 1.0
+
+
+        In this example:
+
+        - The Meta metaclass adds a version attribute to any class that uses it.
+        - When MyClass is defined, Python calls the Meta.__new__ method to create the class.
+
+        
+    Use Cases of Metaclasses
+
+    - Singleton Pattern:
+
+
+        Ensure that only one instance of a class can be created.
+
+
+        class SingletonMeta(type):
+            _instances = {}
+            def __call__(cls, *args, **kwargs):
+                if cls not in cls._instances:
+                    cls._instances[cls] = super().__call__(*args, **kwargs)
+                return cls._instances[cls]
+
+        class SingletonClass(metaclass=SingletonMeta):
+            pass
+
+        obj1 = SingletonClass()
+        obj2 = SingletonClass()
+        print(obj1 is obj2)  # Output: True
+
+
+
+
+    automatic Registration of Classes:
+
+        - Automatically register classes in a registry when they are defined.
+
+        class PluginMeta(type):
+            def __init__(cls, name, bases, dct):
+                if not hasattr(cls, 'plugins'):
+                    cls.plugins = []
+                else:
+                    cls.plugins.append(cls)
+
+        class PluginBase(metaclass=PluginMeta):
+            pass
+
+        class Plugin1(PluginBase):
+            pass
+
+        class Plugin2(PluginBase):
+            pass
+
+        print(PluginBase.plugins)  # Output: [<class '__main__.Plugin1'>, <class '__main__.Plugin2'>]
 
 2. descriptors
 
-    definition :- Descriptors are classes that define the behavior of other classes
+    definition :- descriptors are a powerful feature that allows you to customize attribute access and modification in classes.
+                  They are the mechanism behind properties, methods, and other attribute-related behaviors in Python. Descriptors 
+                  are used to define how attributes are accessed, assigned, or deleted in an object-oriented way.
 
-    example :-
-        class Descriptor:
-            def __get__(self, instance, owner):
-                return self.value
+   What is a Descriptor?
 
-        class MyClass:
-            descriptor = Descriptor()
-            descriptor.value = 10
+        - A descriptor is an object that defines one or more of the following methods:
 
-        my_instance = MyClass()
-        print(my_instance.descriptor)  # => 10
+            __get__(self, instance, owner): Called when the attribute is accessed.
 
-    In this example:
-        - Descriptor is a descriptor that defines the behavior of MyClass
-        - The __get__ method is used to get the value of the descriptor
-        - The instance and owner parameters are used to get the value of the descriptor
-        - The descriptor.value = 10 line sets the value of the descriptor
-        - The my_instance.descriptor line gets the value of the descriptor
+            __set__(self, instance, value): Called when the attribute is assigned a value.
+
+            __delete__(self, instance): Called when the attribute is deleted using del.
+
+    Types of Descriptors
+        Non-Data Descriptors:
+            Only implement __get__.
+            Used for methods and other non-mutable attributes.
+
+        Data Descriptors:
+            Implement __set__ and/or __delete__ in addition to __get__.
+            Used for properties and other mutable attributes.
 
     
+    
+    How Descriptors Work
+
+        - When you access an attribute of an object, Python checks if the attribute is a descriptor. 
+        If it is, Python calls the appropriate descriptor method (__get__, __set__, or __delete__) instead of directly accessing the attribute.
+
+
+
+    Creating a Descriptor
+        - To create a descriptor, define a class that implements one or more of the descriptor methods.
+
+        Example: A Simple Descriptor
+
+        class Descriptor:
+            def __get__(self, instance, owner):
+                print(f"Getting the value from {instance}")
+                return instance._value
+
+            def __set__(self, instance, value):
+                print(f"Setting the value to {value} in {instance}")
+                instance._value = value
+
+            def __delete__(self, instance):
+                print(f"Deleting the value from {instance}")
+                del instance._value
+
+        class MyClass:
+            attribute = Descriptor()  # Descriptor instance
+
+            def __init__(self, value):
+                self._value = value  # Internal storage for the attribute
+
+        # Usage
+        obj = MyClass(10)
+        print(obj.attribute)  # Calls __get__
+        obj.attribute = 20    # Calls __set__
+        del obj.attribute     # Calls __delete__
+
+
+    Use Cases of Descriptors
+        Properties:
+            - Descriptors are the underlying mechanism for Python's @property decorator. You can use descriptors to create custom properties.
+
+            Example:
+
+            class Temperature:
+                def __init__(self, celsius):
+                    self.celsius = celsius
+
+                @property
+                def fahrenheit(self):
+                    return (self.celsius * 9/5) + 32
+
+                @fahrenheit.setter
+                def fahrenheit(self, value):
+                    self.celsius = (value - 32) * 5/9
+
+            temp = Temperature(0)
+            print(temp.fahrenheit)  # Output: 32.0
+            temp.fahrenheit = 100
+            print(temp.celsius)     # Output: 37.777...
+       
+       
+       
+        Validation:
+
+            - Descriptors can be used to validate data before assigning it to an attribute.
+
+        Example:
+
+            class PositiveNumber:
+                def __set__(self, instance, value):
+                    if value < 0:
+                        raise ValueError("Value must be positive")
+                    instance._value = value
+
+                def __get__(self, instance, owner):
+                    return instance._value
+
+            class MyClass:
+                number = PositiveNumber()
+
+                def __init__(self, value):
+                    self.number = value  # Uses the descriptor
+
+            obj = MyClass(10)
+            print(obj.number)  # Output: 10
+            # obj.number = -5  # Raises ValueError
+
+    Built-in Descriptors in Python
+        Properties: The @property decorator is a built-in descriptor.
+        Class Methods: The @classmethod decorator uses descriptors to bind methods to the class
+        Static Methods: The @staticmethod decorator uses descriptors to define static methods.
+        Functions: Functions in Python are non-data descriptors. When you access a method, the __get__ method of the function is called to bind it to the instance.
+
+
+    Descriptor Protocol in Action
+        When you access an attribute, Python follows this order:
+        Check if the attribute is a data descriptor (implements __set__ or __delete__).
+        If not, check the instance's __dict__ for the attribute.
+        If not found, check if the attribute is a non-data descriptor (implements __get__).
+        If not found, check the class's __dict__ for the attribute.
+        If not found, check the parent classes (inheritance).
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     python built in functions
